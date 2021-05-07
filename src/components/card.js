@@ -28,7 +28,12 @@ const CardView = (props) => {
           variant="top"
           src={props.imgSrc}
           alt={props.rocketName}
-          style={{ marginBottom: 10, backgroundColor: "#dee2e6" }}
+          style={{
+            marginBottom: 10,
+            backgroundColor: "#dee2e6",
+            width: 220,
+            height: 240,
+          }}
         />
         <Card.Body>
           <Card.Title>
@@ -36,7 +41,10 @@ const CardView = (props) => {
           </Card.Title>
           <Card.Text>Mission Ids: {props.missionId}</Card.Text>
           <Card.Text>Launch Year: {props.launchYear}</Card.Text>
-          <Card.Text>Successful Launch: {launch}</Card.Text>
+          <Card.Text>
+            Successful Launch:
+            {launch}
+          </Card.Text>
           <Card.Text>Successful Landing: {landing}</Card.Text>
           <Card.Text>Customers: {props.customer}</Card.Text>
         </Card.Body>

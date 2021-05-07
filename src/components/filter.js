@@ -38,9 +38,9 @@ class FilterView extends React.Component {
         <h2 style={{ textDecorationLine: "underline", textAlign: "center" }}>
           Filters
         </h2>
-        <h4 style={{ textAlign: "center", textDecorationLine: "underline" }}>
+        <h3 style={{ textAlign: "center", textDecorationLine: "underline" }}>
           Launch Year
-        </h4>
+        </h3>
         <div>
           <div>
             <button

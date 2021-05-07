@@ -65,9 +65,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <h3 style={{ textAlign: "center", textDecorationLine: "underline" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            textDecorationLine: "underline",
+            padding: 10,
+          }}
+        >
           SpaceX Launch Programs
-        </h3>
+        </h1>
         <div className="row" style={{ backgroundColor: "#dee2e6" }}>
           <div className="col-xs-12 col-sm-12 col-md-5 col-xl-3">
             <FilterView
@@ -118,7 +124,7 @@ class App extends React.Component {
             textAlign: "center",
           }}
         >
-          Developer Name: <p style={{ fontWeight: "bold" }}>Vaibhav Kadwey</p>
+          Developer Name: <h5 style={{ fontWeight: "bold" }}>Vaibhav Kadwey</h5>
         </div>
       </div>
     );

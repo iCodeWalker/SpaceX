@@ -17,6 +17,6 @@
 - The heading of the page is in h1 tag with the same keyword.
 - Images are applied with ALT tag.
 - Images have a definte height amd width.
-- The format should have been in next gen img format(wep, jpeg2000) for faster loading.
+- The image format should have been in next gen image format(webp, jpeg2000) for faster loading.
 
 # All Images not render sometimes as there is some issue with the server.
