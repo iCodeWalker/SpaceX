@@ -7,9 +7,10 @@ import CardView from "./components/card";
 import Loading from "./components/spinner";
 
 class App extends React.Component {
-  state = { books: null };
+  state = { program_data: null };
   componentDidMount() {
     this.fetchData();
+    alert("Double tap the filter options to see the results");
   }
   fetchData = async () => {
     const response = await axios.get(
@@ -19,7 +20,7 @@ class App extends React.Component {
       }
     );
 
-    this.setState({ books: response.data });
+    this.setState({ program_data: response.data });
   };
 
   onFilterClick = async (term) => {
@@ -32,7 +33,7 @@ class App extends React.Component {
         },
       }
     );
-    this.setState({ books: response.data });
+    this.setState({ program_data: response.data });
   };
 
   onLaunchClick = async (term) => {
@@ -45,7 +46,7 @@ class App extends React.Component {
         },
       }
     );
-    this.setState({ books: response.data });
+    this.setState({ program_data: response.data });
   };
   onLandClick = async (term) => {
     const response = await axios.get(
@@ -58,7 +59,7 @@ class App extends React.Component {
         },
       }
     );
-    this.setState({ books: response.data });
+    this.setState({ program_data: response.data });
   };
 
   render() {
@@ -75,25 +76,29 @@ class App extends React.Component {
               onLandClick={this.onLandClick}
             />
           </div>
-          {this.state.books ? (
+          {this.state.program_data ? (
             <div className="col books mt-4">
-              {this.state.books &&
-                this.state.books.map((book, index) => {
+              {this.state.program_data &&
+                this.state.program_data.map((data, index) => {
                   return (
                     <div
                       style={{ marginBottom: 10, display: "grid" }}
-                      key={book.flight_number}
+                      key={data.flight_number}
                     >
                       <CardView
-                        Name={book.mission_name}
-                        flightNumber={book.flight_number}
-                        imgSrc={book.links.mission_patch_small}
-                        missionId={book.mission_id}
-                        launchYear={book.launch_year}
-                        launchSuccess={book.launch_success}
+                        Name={data.mission_name}
+                        flightNumber={data.flight_number}
+                        imgSrc={data.links.mission_patch_small}
+                        missionId={data.mission_id}
+                        launchYear={data.launch_year}
+                        launchSuccess={data.launch_success}
                         landSuccess={
-                          book.rocket.first_stage.cores[0].land_success
+                          data.rocket.first_stage.cores[0].land_success
                         }
+                        customer={
+                          data.rocket.second_stage.payloads[0].customers
+                        }
+                        rocketName={data.rocket.rocket_name}
                       />
                     </div>
                   );
