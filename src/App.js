@@ -124,7 +124,7 @@ class App extends React.Component {
             textAlign: "center",
           }}
         >
-          Developer Name: <h5 style={{ fontWeight: "bold" }}>Vaibhav Kadwey</h5>
+          Developer Name: <h5 style={{ fontWeight: "bold" }}>Abhinav Sonakpuriya</h5>
         </div>
       </div>
     );
